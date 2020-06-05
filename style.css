@@ -6,7 +6,7 @@
 }
 
 :root {
-    --cell-dimension: 150px;
+    --cell-dimension: 15vh;
     --move-dimension: calc(var(--cell-dimension) * 0.85);
 }
 
