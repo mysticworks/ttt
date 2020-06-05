@@ -25,6 +25,7 @@ function startGame() {
     })
     playAgain.addEventListener('click', playAgainClicked)
     turn = 'x'
+    changeHover()
     winning.classList.remove('show')
 }
 
