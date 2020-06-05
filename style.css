@@ -1,0 +1,89 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-dimension: 100px;
+    --move-dimension: calc(var(--cell-dimension) * 0.85);
+}
+
+body {
+    margin: 0;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: var(--cell-dimension);
+    height: var(--cell-dimension);
+    border: solid 3px black;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    cursor: pointer;
+}
+
+.cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:last-child, .cell:nth-child(8), .cell:nth-child(7) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell.x, .cell.o {
+    cursor: not-allowed;
+}
+
+.cell.x::before, .cell.x::after {
+    content: "";
+    width: calc(var(--move-dimension) * 0.1);
+    height: var(--move-dimension);
+    background-color: black;
+    position: absolute;
+}
+
+.cell.x::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.o::before, .cell.o::after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cell.o::before {
+    width: calc(var(--move-dimension) * 0.9);
+    height: calc(var(--move-dimension) * 0.9);
+    background-color: black;
+}
+
+.cell.o::after {
+    width: calc(var(--move-dimension) * 0.7);
+    height: calc(var(--move-dimension) * 0.7);
+    background-color: white;
+}
