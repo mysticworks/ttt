@@ -1,5 +1,8 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:500";
+
 *, *:before, *:after {
     box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
 }
 
 :root {
