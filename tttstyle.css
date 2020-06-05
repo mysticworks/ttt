@@ -5,8 +5,13 @@
     font-family:'Poppins', sans-serif;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 :root {
-    --cell-dimension: 15vh;
+    --cell-dimension: 125px;
     --move-dimension: calc(var(--cell-dimension) * 0.85);
 }
 
@@ -16,7 +21,7 @@ body {
 
 .board {
     width: 100vw;
-    height: 98vh;
+    height: 100vh;
     display: grid;
     align-content: center;
     align-items: center;
@@ -130,9 +135,9 @@ body {
     display: flex;
 }
 
-.credits {
-    padding-left: 0.5em;
-    display: flex;
-    size: 2vh;
-    justify-items: right;
+footer  {
+    position: fixed;
+    left: 0.25em;
+    bottom: 0;
+    width: 100%;
 }
