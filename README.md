@@ -5,12 +5,15 @@ This is a HTML/CSS/JS implementation of both classic Tic Tac Toe as well as Ulti
 You can find a WIP implementation [here](https://mysticworks.github.io/ttt). 
 
 ### Currently Done:
-- Nothing
+- Classic TTT 6/4/2020
 
 ### TODO:
-- Start it
+- Beautify Site
+- Add Credit/Author Information
+- Navigation
 - Classic TTT
+- Classic TTT with CPU
 - Ultimate TTT
+- Ultimate TTT with CPU
 - Online Multiplayer
 - Leaderboards
-- Computer Opponent
