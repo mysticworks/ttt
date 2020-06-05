@@ -1,4 +1,5 @@
 const cells = document.querySelectorAll("[datacell]")
+const board = document.getElementById('board')
 let turn = 'x'
 
 cells.forEach(cell => cell.addEventListener('click', cellClicked, {once: true}))
@@ -9,6 +10,7 @@ function cellClicked(e) {
     const currentMove = turn
     drawMove(cell, currentMove)
     changeMove();
+    changeHover();
 }
 
 function drawMove(cell, move) {
@@ -16,6 +18,12 @@ function drawMove(cell, move) {
 }
 
 function changeMove() {
-    if (turn === 'x') turn = 'o';
+    if (turn === 'x') turn = 'o'
     else turn = 'x'
+}
+
+function changeHover() {
+    board.classList.remove('x')
+    board.classList.remove('o')
+    board.classList.add(turn)
 }
