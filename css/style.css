@@ -10,13 +10,19 @@ html {
     min-height: 100%;
 }
 
-body {
-    margin: 0;
-}
-
 footer  {
     position: fixed;
     left: 0.25em;
     bottom: 0;
     width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 100px;
+    margin: 5vh auto auto;
+    border-radius: 15px;
+    border: black 5px solid;
+    width: 65%;
+    background-color: blanchedalmond;
 }
