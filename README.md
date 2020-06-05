@@ -6,14 +6,14 @@ You can find a WIP implementation [here](https://mysticworks.github.io/ttt).
 
 ### Currently Done:
 - Classic TTT 6/4/2020
+- Add Credit/Author Information (footer added) 6/4/2020
 
 ### TODO:
-- Beautify Site
-- Add Credit/Author Information
+- Beautify Site/Graphics
 - Navigation
 - Classic TTT
 - Classic TTT with CPU
 - Ultimate TTT
 - Ultimate TTT with CPU
-- Online Multiplayer
-- Leaderboards
+- Online Multiplayer (??)
+- Leaderboards (??)
