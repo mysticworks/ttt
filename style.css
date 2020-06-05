@@ -3,7 +3,7 @@
 }
 
 :root {
-    --cell-dimension: 100px;
+    --cell-dimension: 150px;
     --move-dimension: calc(var(--cell-dimension) * 0.85);
 }
 
@@ -54,36 +54,76 @@ body {
     cursor: not-allowed;
 }
 
-.cell.x::before, .cell.x::after {
+.cell.x::before, .cell.x::after, .cell.o::before, .cell.o::after {
+    background-color: black;
+}
+
+.board.x .cell:not(.x):not(.o):hover::before, .board.x .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before, .board.o .cell:not(.x):not(.o):hover::after{
+    background-color: dimgray;
+}
+
+.cell.x::before, .cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::before, .board.x .cell:not(.x):not(.o):hover::after {
     content: "";
     width: calc(var(--move-dimension) * 0.1);
     height: var(--move-dimension);
-    background-color: black;
     position: absolute;
 }
 
-.cell.x::before {
+.cell.x::before, .board.x .cell:not(.x):not(.o):hover::before {
     transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after, .board.x .cell:not(.x):not(.o):hover::after {
     transform: rotate(-45deg);
 }
 
-.cell.o::before, .cell.o::after {
+.cell.o::before, .cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::before, .board.o .cell:not(.x):not(.o):hover::after  {
     content: "";
     border-radius: 50%;
     position: absolute;
 }
 
-.cell.o::before {
+.cell.o::before, .board.o .cell:not(.x):not(.o):hover::before {
     width: calc(var(--move-dimension) * 0.9);
     height: calc(var(--move-dimension) * 0.9);
     background-color: black;
 }
 
-.cell.o::after {
+.cell.o::after, .board.o .cell:not(.x):not(.o):hover::after {
     width: calc(var(--move-dimension) * 0.7);
     height: calc(var(--move-dimension) * 0.7);
     background-color: white;
+}
+
+.winning {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .75);
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    color: white;
+    font-size: 6rem;
+}
+
+.winning button {
+    margin-top: calc(var(--cell-dimension) * 4);
+    background-color: white;
+    font-size: 3rem;
+    padding: 0.3em 0.5em;
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.winning.show {
+    display: flex;
 }
