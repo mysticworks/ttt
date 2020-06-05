@@ -8,8 +8,14 @@ function cellClicked(e) {
     const cell = e.target
     const currentMove = turn
     drawMove(cell, currentMove)
+    changeMove();
 }
 
 function drawMove(cell, move) {
     cell.classList.add(move)
+}
+
+function changeMove() {
+    if (turn === 'x') turn = 'o';
+    else turn = 'x'
 }
