@@ -19,10 +19,36 @@ footer  {
 
 .title {
     text-align: center;
-    font-size: 100px;
+    font-size: 10vh;
     margin: 5vh auto auto;
     border-radius: 15px;
     border: black 5px solid;
     width: 65%;
     background-color: blanchedalmond;
+}
+
+.modeselectors {
+    display: grid;
+    height: auto;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, auto);
+}
+
+.modeselectors button {
+    margin: 1rem 1rem;
+    background-color: lightgray;
+    width: auto;
+    font-size: 3rem;
+    padding: 0.3em 0.5em;
+    border: 0;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.modeselectors button:hover {
+    background-color: black;
+    color: lightgray;
 }
