@@ -19,6 +19,13 @@ body {
     margin: 0;
 }
 
+.backButton {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    transform: scale(3);
+}
+
 .board {
     width: 100vw;
     height: 100vh;
