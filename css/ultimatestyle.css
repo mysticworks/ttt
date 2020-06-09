@@ -1,0 +1,150 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:500";
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+:root {
+    --cell-dimension: 125px;
+    --move-dimension: calc(var(--cell-dimension) * 0.85);
+}
+
+body {
+    margin: 0;
+}
+
+.backButton {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    transform: scale(3);
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: var(--cell-dimension);
+    height: var(--cell-dimension);
+    border: solid 3px black;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    cursor: pointer;
+}
+
+.cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:last-child, .cell:nth-child(8), .cell:nth-child(7) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell.x, .cell.o {
+    cursor: not-allowed;
+}
+
+.cell.x::before, .cell.x::after, .cell.o::before, .cell.o::after {
+    background-color: black;
+}
+
+.board.x .cell:not(.x):not(.o):hover::before, .board.x .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before, .board.o .cell:not(.x):not(.o):hover::after{
+    background-color: dimgray;
+}
+
+.cell.x::before, .cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::before, .board.x .cell:not(.x):not(.o):hover::after {
+    content: "";
+    width: calc(var(--move-dimension) * 0.1);
+    height: var(--move-dimension);
+    position: absolute;
+}
+
+.cell.x::before, .board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after, .board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+.cell.o::before, .cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::before, .board.o .cell:not(.x):not(.o):hover::after  {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cell.o::before, .board.o .cell:not(.x):not(.o):hover::before {
+    width: calc(var(--move-dimension) * 0.9);
+    height: calc(var(--move-dimension) * 0.9);
+}
+
+.cell.o::after, .board.o .cell:not(.x):not(.o):hover::after {
+    width: calc(var(--move-dimension) * 0.7);
+    height: calc(var(--move-dimension) * 0.7);
+    background-color: white;
+}
+
+.winning {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .75);
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    color: white;
+    font-size: 6rem;
+}
+
+.winning button {
+    margin-top: calc(var(--cell-dimension) * 4);
+    background-color: white;
+    font-size: 3rem;
+    padding: 0.3em 0.5em;
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.winning.show {
+    display: flex;
+}
+
+footer  {
+    position: fixed;
+    left: 0.25em;
+    bottom: 0;
+    width: 100%;
+}
