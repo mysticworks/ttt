@@ -1,5 +1,6 @@
 const cells = document.querySelectorAll('[datacell]')
 const board = document.getElementById('board')
+const ultiboard = document.getElementById('ultiboard')
 const winMessage = document.querySelector('[data-winning-text]')
 const winning = document.getElementById('winning')
 const playAgain = document.getElementById('playAgainButton')
@@ -66,9 +67,9 @@ function changeMove() {
 }
 
 function changeHover() {
-    board.classList.remove('x')
-    board.classList.remove('o')
-    board.classList.add(turn)
+    ultiboard.classList.remove('x')
+    ultiboard.classList.remove('o')
+    ultiboard.classList.add(turn)
 }
 
 function endGame(isDraw) {
